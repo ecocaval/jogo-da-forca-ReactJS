@@ -9,17 +9,15 @@ import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 
-export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, palavraSorteada, setPalavraSorteada, numeroDeErros, setNumeroDeErros, setImagemDaForca, letrasChutadas, setLetrasChutadas}) {
+export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, palavraSorteada, setPalavraSorteada, numeroDeErros, setNumeroDeErros, setImagemDaForca, letrasChutadas, setLetrasChutadas, jogoFoiReiniciado, setJogoFoiReiniciado}) {
 
     const [botaoFoiClicado, setBotaoFoiClicado] = useState(false)
     const imagensdaForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
 
-    // if(numeroDeErros === 0) {
-    //     setBotaoFoiClicado(false);
-    // }
-
     function verificaChute() {
 
+        setJogoFoiReiniciado(false);
+        
         if(letrasChutadas.includes(letra)) {
             return
         }
@@ -70,15 +68,16 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
         }
     }
 
-    function checaGaneover() {
-        if(numeroDeErros === 0) {
+    function checaGameover() {
+        // problema nessa condição aqui
+        if(jogoFoiReiniciado) {
             setBotaoFoiClicado(false)
         }
         return true
     }
 
     return(
-            <StyledButton className={((!jogoEmProgresso || (botaoFoiClicado?checaGaneover():false)) ? "botao-desativado" : "")} 
+            <StyledButton className={((!jogoEmProgresso || (botaoFoiClicado?checaGameover():false)) ? "botao-desativado" : "")} 
                           onClick={(() => verificaChute())}
                           disabled={(!jogoEmProgresso?true:false)}
                                         

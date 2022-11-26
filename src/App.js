@@ -19,6 +19,7 @@ function App() {
     }]
   )
   const [jogoEmProgresso, setJogoEmProgresso] = useState(false)
+  const [jogoFoiReiniciado, setJogoFoiReiniciado] = useState(false)
 
   return (
    <>
@@ -33,6 +34,7 @@ function App() {
             jogoEmProgresso={jogoEmProgresso}
             setJogoEmProgresso={setJogoEmProgresso}
             setNumeroDeErros={setNumeroDeErros}
+            setJogoFoiReiniciado={setJogoFoiReiniciado}
           />
           <Letras
             jogoEmProgresso={jogoEmProgresso}   
@@ -42,6 +44,8 @@ function App() {
             numeroDeErros={numeroDeErros}
             setNumeroDeErros={setNumeroDeErros}
             setImagemDaForca={setImagemDaForca}
+            jogoFoiReiniciado={jogoFoiReiniciado}
+            setJogoFoiReiniciado={setJogoFoiReiniciado}
           />
           <Chute
             jogoEmProgresso={jogoEmProgresso}
