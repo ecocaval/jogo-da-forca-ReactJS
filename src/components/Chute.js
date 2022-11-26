@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
-export default function Chute() {
+export default function Chute({jogoEmProgresso}) {
     return (
         <>
             <SessaoDoChute>
                 <p>Já sei a palavra!</p>
-                <input></input>
-                <button onClick={() => alert('Já sei a palavra!')}><p>Chutar</p></button>
+                <input disabled={(!jogoEmProgresso?true:false)}></input>
+                <button onClick={() => {
+                    console.log('teste');
+                }}><p>Chutar</p></button>
             </SessaoDoChute>
         </>
     );

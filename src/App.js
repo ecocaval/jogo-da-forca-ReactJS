@@ -1,10 +1,4 @@
 import forca0 from "./components/assets/forca0.png"
-import forca1 from "./components/assets/forca1.png"
-import forca2 from "./components/assets/forca2.png"
-import forca3 from "./components/assets/forca3.png"
-import forca4 from "./components/assets/forca4.png"
-import forca5 from "./components/assets/forca5.png"
-import forca6 from "./components/assets/forca6.png"
 
 import GlobalStyle from "./styles/GlobalStyle"
 
@@ -33,15 +27,25 @@ function App() {
           <GlobalStyle/>  
           <Jogo
             imagemDaForca={imagemDaForca}
+            setImagemDaForca={setImagemDaForca}
             palavraSorteada={palavraSorteada}
             setPalavraSorteada={setPalavraSorteada}
             jogoEmProgresso={jogoEmProgresso}
             setJogoEmProgresso={setJogoEmProgresso}
+            setNumeroDeErros={setNumeroDeErros}
           />
           <Letras
-            jogoEmProgresso={jogoEmProgresso}        
+            jogoEmProgresso={jogoEmProgresso}   
+            setJogoEmProgresso={setJogoEmProgresso}
+            palavraSorteada={palavraSorteada}   
+            setPalavraSorteada={setPalavraSorteada}  
+            numeroDeErros={numeroDeErros}
+            setNumeroDeErros={setNumeroDeErros}
+            setImagemDaForca={setImagemDaForca}
           />
-          <Chute/>
+          <Chute
+            jogoEmProgresso={jogoEmProgresso}
+          />
         </main>
       </StyledBody>
    </>

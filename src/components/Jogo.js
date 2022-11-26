@@ -1,14 +1,18 @@
 import styled from "styled-components"
-import sortearPalavras from "../palavras/sortearPalavras";
-import palavras from "../palavras/palavras";
+import sortearPalavras from "../palavras/sortearPalavras"
 
-export default function Jogo({imagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso}) {
+import palavras from "../palavras/palavras"
+import forca0 from "./assets/forca0.png"
+
+export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros}) {
 
     function iniciarJogo() {
         setJogoEmProgresso(true)
         setPalavraSorteada(sortearPalavras(palavras))
+        setNumeroDeErros(0)
+        setImagemDaForca(forca0)
     }
-    
+
     return (
         <>
             <ConteudoJogo>
