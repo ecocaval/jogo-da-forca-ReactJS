@@ -42,6 +42,7 @@ function App() {
             setChuteConteudo={setChuteConteudo}
             setLetrasChutadas={setLetrasChutadas}
             corDoChute={corDoChute}
+            setCorDoChute={setCorDoChute}
           />
           <Letras
             jogoEmProgresso={jogoEmProgresso}   
@@ -57,6 +58,7 @@ function App() {
             letrasChutadas={letrasChutadas}
             setLetrasChutadas={setLetrasChutadas}
             setUsuarioGanhou={setUsuarioGanhou}
+            setCorDoChute={setCorDoChute}
           />
           <Chute
             jogoEmProgresso={jogoEmProgresso}

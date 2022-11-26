@@ -4,7 +4,7 @@ import sortearPalavras from "../palavras/sortearPalavras"
 import palavras from "../palavras/palavras"
 import forca0 from "./assets/forca0.png"
 
-export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros, setJogoFoiReiniciado, setChuteConteudo, setLetrasChutadas, corDoChute}) {
+export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros, setJogoFoiReiniciado, setChuteConteudo, setLetrasChutadas, corDoChute, setCorDoChute}) {
     
     function iniciarJogo() {
         setJogoEmProgresso(true)
@@ -14,20 +14,25 @@ export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, 
         setJogoFoiReiniciado(true)
         setChuteConteudo('')
         setLetrasChutadas([]) 
+        setCorDoChute('')
     }
 
-    console.log(palavraSorteada)
-    console.log(corDoChute);
+    console.log(palavraSorteada[0].naoEscondida)
 
     return (
         <>
             <ConteudoJogo>
-                <img src={imagemDaForca}/>
+                <img data-test="game-image" src={imagemDaForca}/>
                 <aside>
-                    <button onClick={() => iniciarJogo()}>
+                    <button data-test="choose-word" onClick={() => iniciarJogo()}>
                         <p>Escolher Palavra</p>
                     </button>
-                    <p style={{ color: corDoChute }}>{palavraSorteada[0].escondida}</p>
+                    <p data-test="word" 
+                       data-answer={palavraSorteada[0].naoEscondida}
+                       style={{color:corDoChute}}
+                    >
+                        {palavraSorteada[0].escondida}
+                    </p>
                 </aside>
             </ConteudoJogo>
         </>

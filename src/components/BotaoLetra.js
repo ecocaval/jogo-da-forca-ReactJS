@@ -9,7 +9,7 @@ import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 
-export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, palavraSorteada, setPalavraSorteada, numeroDeErros, setNumeroDeErros, setImagemDaForca, letrasChutadas, setLetrasChutadas, jogoFoiReiniciado, setChuteConteudo, setJogoFoiReiniciado, setUsuarioGanhou}) {
+export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, palavraSorteada, setPalavraSorteada, numeroDeErros, setNumeroDeErros, setImagemDaForca, letrasChutadas, setLetrasChutadas, jogoFoiReiniciado, setChuteConteudo, setJogoFoiReiniciado, setUsuarioGanhou, setCorDoChute}) {
 
     const [botaoFoiClicado, setBotaoFoiClicado] = useState(false)
     const imagensdaForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
@@ -41,8 +41,16 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
                 return letra
             })
             palavraAtualizada = palavraAtualizada.join('') // converts array to string
+            
+            if(palavraAtualizada === palavraSorteada[0].naoEscondida) {
+                setJogoEmProgresso(false)
+                setLetrasChutadas([]) 
+                setChuteConteudo('')
+                setCorDoChute('green')
+            }
+
             palavraAtualizada = formataPalavraAtualizada(palavraAtualizada) 
-            setPalavraSorteada(palavraAtualizada)         
+            setPalavraSorteada(palavraAtualizada)                  
         } else {
             aumentaQuantidadeDeErros()
         }
@@ -63,6 +71,7 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
             setJogoEmProgresso(false)
             setLetrasChutadas([]) 
             setChuteConteudo('')
+            setCorDoChute('red')
             // colocar o codigo do texto em vermelho aqui
         }
 
@@ -83,6 +92,7 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
             <StyledButton className={((!jogoEmProgresso || (botaoFoiClicado?checaGameover():false)) ? "botao-desativado" : "")} 
                           onClick={(() => verificaChute())}
                           disabled={(!jogoEmProgresso?true:false)}
+                          data-test="letter"
                                         
             >
                 {letra}

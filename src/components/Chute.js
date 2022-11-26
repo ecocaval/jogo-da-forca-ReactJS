@@ -36,9 +36,11 @@ export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteud
                 <input disabled={(!jogoEmProgresso?true:false)}
                        onChange={(e) => {console.log(e.target.value); setChuteConteudo(e.target.value)}}
                        value={chuteConteudo}
+                       data-test="guess-input"
                 >
                 </input>
                 <button disabled={(jogoEmProgresso?false:true)}
+                        data-test="guess-button"
                         onClick={() => {
                         verificaChute();
                         setChuteConteudo('')
