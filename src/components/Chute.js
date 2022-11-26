@@ -14,6 +14,7 @@ export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteud
             setUsuarioGanhou(true)
             setCorDoChute('green')
         } else {
+            setPalavraSorteada(formataPalavraAtualizada(palavraSorteada[0].naoEscondida))
             setImagemDaForca(forca6)
             setNumeroDeErros(0)
             setJogoEmProgresso(false)

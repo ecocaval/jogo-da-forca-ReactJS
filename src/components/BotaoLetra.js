@@ -68,6 +68,7 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
         const nummeroMaximoDeErros = imagensdaForca.length
 
         if(numeroDeErrosAumentado === nummeroMaximoDeErros - 1) {
+            setPalavraSorteada(formataPalavraAtualizada(palavraSorteada[0].naoEscondida))
             setJogoEmProgresso(false)
             setLetrasChutadas([]) 
             setChuteConteudo('')
@@ -92,8 +93,7 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
             <StyledButton className={((!jogoEmProgresso || (botaoFoiClicado?checaGameover():false)) ? "botao-desativado" : "")} 
                           onClick={(() => verificaChute())}
                           disabled={(!jogoEmProgresso?true:false)}
-                          data-test="letter"
-                                        
+                          data-test="letter"                                        
             >
                 {letra}
             </StyledButton>
