@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import forca6 from "./assets/forca6.png"
 
-export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteudo, setChuteConteudo, palavraSorteada, setPalavraSorteada, setNumeroDeErros, setImagemDaForca, setLetrasChutadas}) {
+export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteudo, setChuteConteudo, palavraSorteada, setPalavraSorteada, setNumeroDeErros, setImagemDaForca, setLetrasChutadas, setUsuarioGanhou, setCorDoChute}) {
 
     function verificaChute() {
         console.log(palavraSorteada[0].naoEscondida);
@@ -11,11 +11,14 @@ export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteud
             setPalavraSorteada(formataPalavraAtualizada(chuteConteudo))
             setJogoEmProgresso(false)
             setLetrasChutadas([]) 
+            setUsuarioGanhou(true)
+            setCorDoChute('green')
         } else {
             setImagemDaForca(forca6)
             setNumeroDeErros(0)
             setJogoEmProgresso(false)
             setLetrasChutadas([]) 
+            setCorDoChute('red')
         }
     }
 

@@ -22,6 +22,8 @@ function App() {
   const [jogoFoiReiniciado, setJogoFoiReiniciado] = useState(false)
   const [chuteConteudo, setChuteConteudo] = useState('')
   const [letrasChutadas, setLetrasChutadas] = useState([])
+  const [usuarioGanhou, setUsuarioGanhou] = useState(false)
+  const [corDoChute, setCorDoChute] = useState('')
 
   return (
    <>
@@ -39,6 +41,7 @@ function App() {
             setJogoFoiReiniciado={setJogoFoiReiniciado}
             setChuteConteudo={setChuteConteudo}
             setLetrasChutadas={setLetrasChutadas}
+            corDoChute={corDoChute}
           />
           <Letras
             jogoEmProgresso={jogoEmProgresso}   
@@ -53,6 +56,7 @@ function App() {
             setJogoFoiReiniciado={setJogoFoiReiniciado}
             letrasChutadas={letrasChutadas}
             setLetrasChutadas={setLetrasChutadas}
+            setUsuarioGanhou={setUsuarioGanhou}
           />
           <Chute
             jogoEmProgresso={jogoEmProgresso}
@@ -66,6 +70,8 @@ function App() {
             setNumeroDeErros={setNumeroDeErros}
             setImagemDaForca={setImagemDaForca}
             setLetrasChutadas={setLetrasChutadas}
+            setUsuarioGanhou={setUsuarioGanhou}
+            setCorDoChute={setCorDoChute}
           />
         </main>
       </StyledBody>

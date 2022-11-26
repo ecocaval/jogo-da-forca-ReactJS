@@ -4,8 +4,8 @@ import sortearPalavras from "../palavras/sortearPalavras"
 import palavras from "../palavras/palavras"
 import forca0 from "./assets/forca0.png"
 
-export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros, setJogoFoiReiniciado, setChuteConteudo, setLetrasChutadas}) {
-
+export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros, setJogoFoiReiniciado, setChuteConteudo, setLetrasChutadas, corDoChute}) {
+    
     function iniciarJogo() {
         setJogoEmProgresso(true)
         setPalavraSorteada(sortearPalavras(palavras))
@@ -17,6 +17,7 @@ export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, 
     }
 
     console.log(palavraSorteada)
+    console.log(corDoChute);
 
     return (
         <>
@@ -26,7 +27,7 @@ export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, 
                     <button onClick={() => iniciarJogo()}>
                         <p>Escolher Palavra</p>
                     </button>
-                    <p>{palavraSorteada[0].escondida}</p>
+                    <p style={{ color: corDoChute }}>{palavraSorteada[0].escondida}</p>
                 </aside>
             </ConteudoJogo>
         </>
