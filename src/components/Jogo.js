@@ -4,7 +4,7 @@ import sortearPalavras from "../palavras/sortearPalavras"
 import palavras from "../palavras/palavras"
 import forca0 from "./assets/forca0.png"
 
-export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros, setJogoFoiReiniciado}) {
+export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, setPalavraSorteada, jogoEmProgresso, setJogoEmProgresso, setNumeroDeErros, setJogoFoiReiniciado, setChuteConteudo, setLetrasChutadas}) {
 
     function iniciarJogo() {
         setJogoEmProgresso(true)
@@ -12,7 +12,11 @@ export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, 
         setNumeroDeErros(0)
         setImagemDaForca(forca0)
         setJogoFoiReiniciado(true)
+        setChuteConteudo('')
+        setLetrasChutadas([]) 
     }
+
+    console.log(palavraSorteada)
 
     return (
         <>

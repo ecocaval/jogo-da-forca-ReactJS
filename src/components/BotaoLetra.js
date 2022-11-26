@@ -9,16 +9,19 @@ import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 
-export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, palavraSorteada, setPalavraSorteada, numeroDeErros, setNumeroDeErros, setImagemDaForca, letrasChutadas, setLetrasChutadas, jogoFoiReiniciado, setJogoFoiReiniciado}) {
+export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, palavraSorteada, setPalavraSorteada, numeroDeErros, setNumeroDeErros, setImagemDaForca, letrasChutadas, setLetrasChutadas, jogoFoiReiniciado, setChuteConteudo, setJogoFoiReiniciado}) {
 
     const [botaoFoiClicado, setBotaoFoiClicado] = useState(false)
     const imagensdaForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
 
     function verificaChute() {
-
-        setJogoFoiReiniciado(false);
         
+        setJogoFoiReiniciado(false)
+
         if(letrasChutadas.includes(letra)) {
+            console.log(letrasChutadas);
+            console.log('esta letra ja foi chutada');
+
             return
         }
 
@@ -60,6 +63,7 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
         if(numeroDeErrosAumentado === nummeroMaximoDeErros - 1) {
             setJogoEmProgresso(false)
             setLetrasChutadas([]) 
+            setChuteConteudo('')
         }
 
         if(numeroDeErrosAumentado < nummeroMaximoDeErros) {

@@ -1,14 +1,48 @@
+import { useState } from "react";
 import styled from "styled-components"
 
-export default function Chute({jogoEmProgresso}) {
+import forca6 from "./assets/forca6.png"
+
+export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteudo, setChuteConteudo, palavraSorteada, setPalavraSorteada, setNumeroDeErros, setImagemDaForca, setLetrasChutadas}) {
+
+    function verificaChute() {
+        console.log(palavraSorteada[0].naoEscondida);
+        if(chuteConteudo === palavraSorteada[0].naoEscondida) {
+            setPalavraSorteada(formataPalavraAtualizada(chuteConteudo))
+            setJogoEmProgresso(false)
+            setLetrasChutadas([]) 
+        } else {
+            setImagemDaForca(forca6)
+            setNumeroDeErros(0)
+            setJogoEmProgresso(false)
+            setLetrasChutadas([]) 
+        }
+    }
+
+    function formataPalavraAtualizada(palavraAtualizada) {
+        return [{
+            naoEscondida: palavraSorteada[0].naoEscondida,
+            escondida: palavraAtualizada
+        }]
+    }
+
     return (
         <>
             <SessaoDoChute>
                 <p>Já sei a palavra!</p>
-                <input disabled={(!jogoEmProgresso?true:false)}></input>
-                <button onClick={() => {
-                    console.log('teste');
-                }}><p>Chutar</p></button>
+                <input disabled={(!jogoEmProgresso?true:false)}
+                       onChange={(e) => {console.log(e.target.value); setChuteConteudo(e.target.value)}}
+                       value={chuteConteudo}
+                >
+                </input>
+                <button disabled={(jogoEmProgresso?false:true)}
+                        onClick={() => {
+                        verificaChute();
+                        setChuteConteudo('')
+                }}
+                >
+                    <p>Chutar</p>
+                </button>
             </SessaoDoChute>
         </>
     );

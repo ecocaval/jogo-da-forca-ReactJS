@@ -20,6 +20,8 @@ function App() {
   )
   const [jogoEmProgresso, setJogoEmProgresso] = useState(false)
   const [jogoFoiReiniciado, setJogoFoiReiniciado] = useState(false)
+  const [chuteConteudo, setChuteConteudo] = useState('')
+  const [letrasChutadas, setLetrasChutadas] = useState([])
 
   return (
    <>
@@ -35,6 +37,8 @@ function App() {
             setJogoEmProgresso={setJogoEmProgresso}
             setNumeroDeErros={setNumeroDeErros}
             setJogoFoiReiniciado={setJogoFoiReiniciado}
+            setChuteConteudo={setChuteConteudo}
+            setLetrasChutadas={setLetrasChutadas}
           />
           <Letras
             jogoEmProgresso={jogoEmProgresso}   
@@ -45,10 +49,23 @@ function App() {
             setNumeroDeErros={setNumeroDeErros}
             setImagemDaForca={setImagemDaForca}
             jogoFoiReiniciado={jogoFoiReiniciado}
+            setChuteConteudo={setChuteConteudo}
             setJogoFoiReiniciado={setJogoFoiReiniciado}
+            letrasChutadas={letrasChutadas}
+            setLetrasChutadas={setLetrasChutadas}
           />
           <Chute
             jogoEmProgresso={jogoEmProgresso}
+            setJogoEmProgresso={setJogoEmProgresso}
+            jogoFoiReiniciado={jogoFoiReiniciado}
+            setJogoFoiReiniciado={setJogoFoiReiniciado}
+            chuteConteudo={chuteConteudo}
+            setChuteConteudo={setChuteConteudo}
+            palavraSorteada={palavraSorteada}
+            setPalavraSorteada={setPalavraSorteada}
+            setNumeroDeErros={setNumeroDeErros}
+            setImagemDaForca={setImagemDaForca}
+            setLetrasChutadas={setLetrasChutadas}
           />
         </main>
       </StyledBody>
