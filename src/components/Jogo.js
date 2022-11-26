@@ -17,7 +17,7 @@ export default function Jogo({imagemDaForca, setImagemDaForca, palavraSorteada, 
         setCorDoChute('')
     }
 
-    console.log(palavraSorteada[0].naoEscondida)
+    // console.log(palavraSorteada[0].naoEscondida)
 
     return (
         <>

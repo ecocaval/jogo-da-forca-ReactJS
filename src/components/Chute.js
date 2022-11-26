@@ -6,7 +6,6 @@ import forca6 from "./assets/forca6.png"
 export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteudo, setChuteConteudo, palavraSorteada, setPalavraSorteada, setNumeroDeErros, setImagemDaForca, setLetrasChutadas, setUsuarioGanhou, setCorDoChute}) {
 
     function verificaChute() {
-        console.log(palavraSorteada[0].naoEscondida);
         if(chuteConteudo === palavraSorteada[0].naoEscondida) {
             setPalavraSorteada(formataPalavraAtualizada(chuteConteudo))
             setJogoEmProgresso(false)
@@ -35,7 +34,7 @@ export default function Chute({jogoEmProgresso, setJogoEmProgresso, chuteConteud
             <SessaoDoChute>
                 <p>Já sei a palavra!</p>
                 <input disabled={(!jogoEmProgresso?true:false)}
-                       onChange={(e) => {console.log(e.target.value); setChuteConteudo(e.target.value)}}
+                       onChange={(e) => {setChuteConteudo(e.target.value)}}
                        value={chuteConteudo}
                        data-test="guess-input"
                 >

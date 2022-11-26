@@ -15,12 +15,10 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
     const imagensdaForca = [forca0, forca1, forca2, forca3, forca4, forca5, forca6]
 
     function verificaChute() {
-        
+
         setJogoFoiReiniciado(false)
 
         if(letrasChutadas.includes(letra)) {
-            console.log(letrasChutadas);
-            console.log('esta letra ja foi chutada');
             return
         }
 
@@ -90,9 +88,9 @@ export default function BotaoLetra({letra, jogoEmProgresso, setJogoEmProgresso, 
     }
 
     return(
-            <StyledButton className={((!jogoEmProgresso || (botaoFoiClicado?checaGameover():false)) ? "botao-desativado" : "")} 
+            <StyledButton className={((!jogoEmProgresso || (botaoFoiClicado?checaGameover():false))?"botao-desativado":"")} 
+                          disabled={((!jogoEmProgresso || (botaoFoiClicado?checaGameover():false))?true:false)}
                           onClick={(() => verificaChute())}
-                          disabled={(!jogoEmProgresso?true:false)}
                           data-test="letter"                                        
             >
                 {letra}
