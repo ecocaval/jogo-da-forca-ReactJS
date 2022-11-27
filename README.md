@@ -32,4 +32,6 @@ And finally, run:
 npm start
 ```
 
-The website is also acessable through the vercel deploy, click the following link to see it: (https://jogo-da-forca-react-js.vercel.app/)
+The website is also acessable through the vercel deploy, click the following link to see it: 
+
+- [Enter the game](https://jogo-da-forca-react-js.vercel.app/)
