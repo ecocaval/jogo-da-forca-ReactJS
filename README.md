@@ -5,7 +5,7 @@
 ## ✏️ Description
 <p align="justify" >This project was built in the 2o. week of the React module in the driven education bootcamp. The game was built using React JS and Styled-components.</p>
 
-##  <p align = "left"> :white_circle: Technologies</p>
+## :white_circle: Technologies
 
 - [JavaScript](https://www.javascript.com/)
 - [HTML5](https://html5.org/)
