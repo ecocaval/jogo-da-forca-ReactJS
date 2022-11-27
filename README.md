@@ -3,7 +3,7 @@
 <p align = "center"><img style="width:600px" src="./public/readme.png"/></p>
 
 ## ✏️ Description
-<p align="justify" >This project was built in the 2o. week of the React module in the driven education bootcamp. The game was built using React JS and Styled-components Frameworks </p>
+<p align="justify" >This project was built in the 2o. week of the React module in the driven education bootcamp. The game was built using React JS and Styled-components.</p>
 
 ##  <p align = "left"> :white_circle: Technologies</p>
 
