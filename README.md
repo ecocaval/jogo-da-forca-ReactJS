@@ -17,7 +17,7 @@
 This project was bootstrapped with Create React App, so you need to install Node.js and npm first, in order to test the project. First clone this github repository into your computer, then open the folder cloned:
 
 ```bash
-git clone https://github.com/ecocaval/jogo-da-forca-ReactJS.git
+git clone https://github.com/ecocaval/jogo-da-forca-ReactJS.git && cd jogo-da-forca-ReactJS
 ```
 
 Then you must install all the dependencies running:
